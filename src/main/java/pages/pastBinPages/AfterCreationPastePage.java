@@ -6,16 +6,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.BasePage;
 
 import java.time.Duration;
 
-public class AfterCreationPastePage {
-    private final WebDriver webDriver;
-
+public class AfterCreationPastePage extends BasePage {
 
     public AfterCreationPastePage(WebDriver driver) {
-        this.webDriver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @FindBy(xpath = "//div[@class='de1']")
@@ -27,10 +25,6 @@ public class AfterCreationPastePage {
     @FindBy(xpath = "//ol[@class='bash']")
     private WebElement createdPaste;
 
-    private void waiter(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(element));
-    }
 
     public WebElement getAfterPostingPaste() {
         waiter(afterPostingPaste);

@@ -11,8 +11,8 @@ import java.time.Duration;
 
 public abstract class BasePage {
 
-    public final WebDriver webDriver;
-    public String winHandleBefore;
+    protected final WebDriver webDriver;
+    protected String winHandleBefore;
 
     public BasePage(WebDriver driver) {
         this.webDriver = driver;

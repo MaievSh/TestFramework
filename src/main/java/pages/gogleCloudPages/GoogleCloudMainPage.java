@@ -12,6 +12,7 @@ public class GoogleCloudMainPage extends BasePage {
         super(driver);
     }
 
+
     @FindBy(xpath = "//input[@aria-label='Search']")
     private WebElement searchBtn;
 

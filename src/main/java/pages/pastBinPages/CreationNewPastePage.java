@@ -9,6 +9,9 @@ import pages.BasePage;
 
 public class CreationNewPastePage extends BasePage {
 
+    public CreationNewPastePage(WebDriver driver) {
+        super(driver);
+    }
 
     @FindBy(xpath = "//textarea[@id='postform-text']")
     private WebElement textArea;
@@ -29,9 +32,6 @@ public class CreationNewPastePage extends BasePage {
     @FindBy(xpath = "//li[@class='select2-results__option']/descendant::li[@class='select2-results__option' and text()='Bash'][1]")
     private WebElement bashSyntax;
 
-    public CreationNewPastePage(WebDriver driver) {
-        super(driver);
-    }
 
     public void writeTextOfNewPaste(String textOfPaste) {
         textArea.sendKeys(textOfPaste);

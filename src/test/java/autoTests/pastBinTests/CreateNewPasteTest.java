@@ -1,29 +1,19 @@
-package pastBinTests;
+package autoTests.pastBinTests;
 
+import autoTests.BaseTest;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.pastBinPages.AfterCreationPastePage;
 import pages.pastBinPages.CreationNewPastePage;
 
-public class CreateNewPasteTest {
+public class CreateNewPasteTest extends BaseTest {
 
-    private WebDriver webDriver;
-
-    @BeforeMethod(alwaysRun = true)
-    public void browserSetUp() {
-        webDriver = new ChromeDriver();
-        webDriver.manage().window().maximize();
-    }
-
-    @Test
+    @Test()
     public void creationNewPasteWithParamTest() {
+        webDriver.get("https://pastebin.com/");
         CreationNewPastePage creationNewPastePage = new CreationNewPastePage(webDriver);
         AfterCreationPastePage afterCreationPastePage = new AfterCreationPastePage(webDriver);
-        webDriver.get("https://pastebin.com/");
         creationNewPastePage.writeTextOfNewPaste("Hello from WebDriver");
         creationNewPastePage.choosePasteExpiration();
         creationNewPastePage.writePostFormText("Test");
@@ -31,7 +21,7 @@ public class CreateNewPasteTest {
         Assert.assertTrue(afterCreationPastePage.getAfterPostingPaste().isDisplayed());
     }
 
-    @Test
+    @Test()
     public void creationNewPasteWithBashSyntaxTest() {
         CreationNewPastePage creationNewPastePage = new CreationNewPastePage(webDriver);
         AfterCreationPastePage afterCreationPastePage = new AfterCreationPastePage(webDriver);
@@ -46,10 +36,5 @@ public class CreateNewPasteTest {
         Assert.assertTrue(afterCreationPastePage.checkPasteTitle().isDisplayed() && afterCreationPastePage.syntaxBashCheck().isDisplayed());
     }
 
-    @AfterMethod(alwaysRun = true)
-    public void browserQuite() {
-        webDriver.quit();
-        webDriver = null;
-    }
 
 }

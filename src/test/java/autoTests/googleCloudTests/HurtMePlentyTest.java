@@ -1,5 +1,6 @@
-package googleCloudTests;
+package autoTests.googleCloudTests;
 
+import autoTests.BaseTest;
 import pages.gogleCloudPages.GoogleCloudPricingCalculatorPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,22 +9,17 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.gogleCloudPages.GoogleCloudMainPage;
+import pages.pastBinPages.AfterCreationPastePage;
+import pages.pastBinPages.CreationNewPastePage;
 
-public class HurtMePlentyTest {
+public class HurtMePlentyTest extends BaseTest {
 
-    private WebDriver webDriver;
-
-    @BeforeMethod(alwaysRun = true)
-    public void browserSetUp() {
-        webDriver = new ChromeDriver();
-        webDriver.manage().window().maximize();
-    }
 
     @Test()
     public void checkPrisingCalculatorTest() {
+        webDriver.get("https://cloud.google.com/");
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
         GoogleCloudPricingCalculatorPage googleCloudPricingCalculatorPage = new GoogleCloudPricingCalculatorPage(webDriver);
-        webDriver.get("https://cloud.google.com/");
         googleCloudMainPage.inputInSearchField("Google Cloud Platform Pricing Calculator")
                 .pricingCalculatorSearch()
                 .getFrameInsideFrame()
@@ -42,12 +38,6 @@ public class HurtMePlentyTest {
         Assert.assertTrue(googleCloudPricingCalculatorPage.estimateFieldSSDCheck().isDisplayed(), "SSD type is not equals SSD type in bill");
         Assert.assertTrue(googleCloudPricingCalculatorPage.estimateFieldCommitedTermCheck().isDisplayed(), "Commitment term is not equals commitment term in bill");
         Assert.assertTrue(googleCloudPricingCalculatorPage.checkCurrentTotalCostAndManualTotalCost().isDisplayed(), "Total cost is not equal total cost when choose parameters in manual way");
-    }
-
-    @AfterMethod(alwaysRun = true)
-    public void browserQuite() {
-        webDriver.quit();
-        webDriver = null;
     }
 
 }

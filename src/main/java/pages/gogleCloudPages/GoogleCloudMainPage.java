@@ -1,21 +1,20 @@
-package gogleCloudPages;
+package pages.gogleCloudPages;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import pages.BasePage;
 
-public class GoogleCloudMainPage {
-    private final WebDriver webDriver;
+public class GoogleCloudMainPage extends BasePage {
 
     public GoogleCloudMainPage(WebDriver driver) {
-        this.webDriver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @FindBy(xpath = "//input[@aria-label='Search']")
     private WebElement searchBtn;
+
 
     public SearchResultGoogleCloudPage inputInSearchField(String txt) {
         searchBtn.click();

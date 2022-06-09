@@ -1,25 +1,15 @@
-package yopmailPages;
+package pages.yopmailPages;
 
-import dev.failsafe.internal.util.Assert;
-import gogleCloudPages.GoogleCloudPricingCalculatorPage;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import java.util.concurrent.TimeUnit;
+import pages.BasePage;
 
-import java.security.Key;
 import java.time.Duration;
 
-public class YopMailMainPage {
-
-    private final WebDriver webDriver;
+public class YopMailMainPage extends BasePage {
 
     public YopMailMainPage(WebDriver driver) {
-        this.webDriver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @FindBy(xpath = "//a[starts-with(@title,'Генератор Одноразовых')]")
@@ -28,13 +18,6 @@ public class YopMailMainPage {
     private WebElement copyEmail;
     @FindBy(xpath = "//span[text()='Проверить почту']")
     private WebElement checkEmailBtn;
-
-
-    private void waiter(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.elementToBeClickable(element));
-    }
-
 
     public YopMailMainPage chooseEmailGenerator() {
         waiter(emailGenerator);
@@ -48,7 +31,7 @@ public class YopMailMainPage {
     }
 
     public EmailCheckPage emailCheck() {
-        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         checkEmailBtn.click();
         return new EmailCheckPage(webDriver);
     }

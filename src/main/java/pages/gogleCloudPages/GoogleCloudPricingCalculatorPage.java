@@ -1,28 +1,17 @@
-package gogleCloudPages;
+package pages.gogleCloudPages;
 
-import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import yopmailPages.YopMailMainPage;
-
-import java.time.Duration;
-
-import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsToBe;
+import pages.BasePage;
+import pages.yopmailPages.YopMailMainPage;
 
 
-public class GoogleCloudPricingCalculatorPage {
+public class GoogleCloudPricingCalculatorPage extends BasePage {
 
-    private final WebDriver webDriver;
-    String winHandleBefore;
-
-    public GoogleCloudPricingCalculatorPage(WebDriver driver) {
-        this.webDriver = driver;
-        winHandleBefore = webDriver.getWindowHandle();
-        PageFactory.initElements(driver, this);
+    public GoogleCloudPricingCalculatorPage(WebDriver webDriver) {
+        super(webDriver);
     }
+
 
     @FindBy(xpath = "//input[@ng-model='listingCtrl.soleTenant.nodesCount']")
     private WebElement numbOfInstancesField;
@@ -80,20 +69,9 @@ public class GoogleCloudPricingCalculatorPage {
     private WebElement emailBtn;
     @FindBy(xpath = "//input[@name='description' and @type='email']")
     private WebElement enterEmail;
-    @FindBy(xpath ="//button[@aria-label='Send Email']")
+    @FindBy(xpath = "//button[@aria-label='Send Email']")
     private WebElement sendEmailInWindow;
 
-
-    public void scrollBy(WebElement element) {
-        JavascriptExecutor js = (JavascriptExecutor) webDriver;
-        js.executeScript("arguments[0].scrollIntoView();", element);
-    }
-
-
-    private void waiter(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOf(element));
-    }
 
     public YopMailMainPage openNewTab() {
         webDriver.switchTo().newWindow(WindowType.TAB).get("https://yopmail.com/ru/");
@@ -183,25 +161,24 @@ public class GoogleCloudPricingCalculatorPage {
         waiter(emailBtn);
         emailBtn.click();
         enterEmail.click();
-        enterEmail.sendKeys(Keys.CONTROL,"v");
+        enterEmail.sendKeys(Keys.CONTROL, "v");
         sendEmailInWindow.click();
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
     public GoogleCloudPricingCalculatorPage closeNewTab() {
-        for (String winHandle : webDriver.getWindowHandles()){
+        for (String winHandle : webDriver.getWindowHandles()) {
             webDriver.switchTo().window(winHandle);
             break;
         }
-        webDriver.switchTo().window(winHandleBefore);
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
+
     public YopMailMainPage openNewTabAgain() {
-        for (String winHandle : webDriver.getWindowHandles()){
+        for (String winHandle : webDriver.getWindowHandles()) {
             webDriver.switchTo().window(winHandle);
         }
-       // webDriver.switchTo().window(winHandleBefore);
         return new YopMailMainPage(webDriver);
     }
 

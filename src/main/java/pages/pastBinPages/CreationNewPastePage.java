@@ -1,18 +1,14 @@
-package pastBinPages;
+package pages.pastBinPages;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import pages.BasePage;
 
-public class CreationNewPastePage {
-    private final WebDriver webDriver;
+public class CreationNewPastePage extends BasePage {
 
-    public CreationNewPastePage(WebDriver driver) {
-        this.webDriver = driver;
-        PageFactory.initElements(driver, this);
-    }
 
     @FindBy(xpath = "//textarea[@id='postform-text']")
     private WebElement textArea;
@@ -33,16 +29,16 @@ public class CreationNewPastePage {
     @FindBy(xpath = "//li[@class='select2-results__option']/descendant::li[@class='select2-results__option' and text()='Bash'][1]")
     private WebElement bashSyntax;
 
+    public CreationNewPastePage(WebDriver driver) {
+        super(driver);
+    }
+
     public void writeTextOfNewPaste(String textOfPaste) {
         textArea.sendKeys(textOfPaste);
     }
 
-    public void scrollBy() {
-        JavascriptExecutor js = (JavascriptExecutor) webDriver;
-        js.executeScript("arguments[0].scrollIntoView();", checkScroll);
-    }
-
     public void choosePasteExpiration() {
+        scrollBy(checkScroll);
         pasteExpirationDropDownMenu.click();
         timeOfExpiration.click();
     }
@@ -53,6 +49,7 @@ public class CreationNewPastePage {
     }
 
     public AfterCreationPastePage createNewPaste() {
+        scrollBy(checkScroll);
         newPasteButton.click();
         return new AfterCreationPastePage(webDriver);
     }

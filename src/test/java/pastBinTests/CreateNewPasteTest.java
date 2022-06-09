@@ -6,8 +6,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pastBinPages.AfterCreationPastePage;
-import pastBinPages.CreationNewPastePage;
+import pages.pastBinPages.AfterCreationPastePage;
+import pages.pastBinPages.CreationNewPastePage;
 
 public class CreateNewPasteTest {
 
@@ -25,7 +25,6 @@ public class CreateNewPasteTest {
         AfterCreationPastePage afterCreationPastePage = new AfterCreationPastePage(webDriver);
         webDriver.get("https://pastebin.com/");
         creationNewPastePage.writeTextOfNewPaste("Hello from WebDriver");
-        creationNewPastePage.scrollBy();
         creationNewPastePage.choosePasteExpiration();
         creationNewPastePage.writePostFormText("Test");
         creationNewPastePage.createNewPaste();
@@ -41,7 +40,6 @@ public class CreateNewPasteTest {
                 "git reset $(git commit-tree HEAD^{tree} -m 'Legacy code')" + "\n" +
                 "git push origin master --force");
         creationNewPastePage.highlightTextInPaste();
-        creationNewPastePage.scrollBy();
         creationNewPastePage.chooseBashSyntaxInOptionalSettings();
         creationNewPastePage.writePostFormText("how to gain dominance among developers");
         creationNewPastePage.createNewPaste();

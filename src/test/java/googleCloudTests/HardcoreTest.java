@@ -1,17 +1,15 @@
 package googleCloudTests;
 
-import gogleCloudPages.GoogleCloudMainPage;
-import gogleCloudPages.GoogleCloudPricingCalculatorPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+import pages.gogleCloudPages.GoogleCloudMainPage;
+import pages.gogleCloudPages.GoogleCloudPricingCalculatorPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import yopmailPages.EmailCheckPage;
-import yopmailPages.YopMailMainPage;
+import pages.yopmailPages.EmailCheckPage;
+import pages.yopmailPages.YopMailMainPage;
 
 public class HardcoreTest {
 
@@ -24,9 +22,8 @@ public class HardcoreTest {
     }
 
     @Test()
-    public void checkPrisingCalculatorTest() throws InterruptedException {
+    public void checkPrisingCalculatorTest() {
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
-        YopMailMainPage yopMailMainPage = new YopMailMainPage(webDriver);
         GoogleCloudPricingCalculatorPage googleCloudPricingCalculatorPage = new GoogleCloudPricingCalculatorPage(webDriver);
         EmailCheckPage emailCheckPage = new EmailCheckPage(webDriver);
         webDriver.get("https://cloud.google.com/");
@@ -52,7 +49,7 @@ public class HardcoreTest {
                 .openNewTabAgain()
                 .emailCheck()
                 .checkBill();
-        Assert.assertTrue(emailCheckPage.checkBill().getText().contains("USD 21,894.89"),"Total Estimated Monthly Cost not equals cost in calculator!");
+        Assert.assertTrue(emailCheckPage.checkBill().getText().contains("USD 21,894.89"), "Total Estimated Monthly Cost not equals cost in calculator!");
 
     }
 

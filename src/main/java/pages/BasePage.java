@@ -13,6 +13,7 @@ public abstract class BasePage {
 
     protected final WebDriver webDriver;
     protected String winHandleBefore;
+    //String originalWindow = webDriver.getWindowHandle();
 
     public BasePage(WebDriver driver) {
         this.webDriver = driver;

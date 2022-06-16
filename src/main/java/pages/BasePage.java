@@ -49,4 +49,9 @@ public abstract class BasePage {
         action.moveToElement(element).doubleClick().build().perform();
     }
 
+    public void pause(WebElement element) {
+        Actions action = new Actions(webDriver);
+        action.moveToElement(element).pause(java.time.Duration.ofSeconds(10)).build().perform();
+    }
+
 }

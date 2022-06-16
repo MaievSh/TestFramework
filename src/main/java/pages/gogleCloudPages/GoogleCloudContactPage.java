@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
 
-import java.time.Duration;
-
 public class GoogleCloudContactPage extends BasePage {
 
     @FindBy(xpath = "//a[@track-name='Chat online with us']")
@@ -19,15 +17,14 @@ public class GoogleCloudContactPage extends BasePage {
     }
 
     public GoogleCloudContactPage chooseChatWitsUsBtn() {
-        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        waitElement(chatWithUsBtn);
+        pause(chatWithUsBtn);
         highlightElement(chatWithUsBtn);
         doubleClick(chatWithUsBtn);
         return new GoogleCloudContactPage(webDriver);
     }
 
     public WebElement chatBotIsOpen() {
-        waitElement(chatBot);
+        pause(chatWithUsBtn);
         highlightElement(chatBot);
         return chatBot;
     }

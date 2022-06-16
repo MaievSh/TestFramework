@@ -22,10 +22,10 @@ public abstract class BaseTest {
         webDriver.manage().window().maximize();
     }
 
-/*    @AfterMethod(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void browserQuite() {
         webDriver.quit();
         webDriver = null;
-    }*/
+    }
 
 }

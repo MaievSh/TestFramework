@@ -6,13 +6,13 @@ import org.testng.annotations.Test;
 import pages.gogleCloudPages.GoogleCloudContactSalesPage;
 import pages.gogleCloudPages.GoogleCloudMainPage;
 
-public class RequiredFieldsTest extends BaseTest {
+public class RequiredFieldsTest extends GoogleCloudBaseTest {
 
-    @Test
+    @Test(groups = "googleCloudTests")
     public void checkHighlightedRequiredFieldsTest() {
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
-        GoogleCloudContactSalesPage googleCloudContactSalesPage = new GoogleCloudContactSalesPage(webDriver);
-        webDriver.get("https://cloud.google.com/");
+        getGoogleCloudSiteMainPage();
+        GoogleCloudContactSalesPage googleCloudContactSalesPage =
         googleCloudMainPage.solutionsBtnClick()
                 .industrySolutionsChoose()
                 .gamingBtnClick()

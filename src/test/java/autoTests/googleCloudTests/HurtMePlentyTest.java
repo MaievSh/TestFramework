@@ -1,26 +1,20 @@
 package autoTests.googleCloudTests;
 
 import autoTests.BaseTest;
-import pages.gogleCloudPages.GoogleCloudPricingCalculatorPage;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.gogleCloudPages.GoogleCloudMainPage;
-import pages.pastBinPages.AfterCreationPastePage;
-import pages.pastBinPages.CreationNewPastePage;
+import pages.gogleCloudPages.GoogleCloudPricingCalculatorPage;
 
-public class HurtMePlentyTest extends BaseTest {
+public class HurtMePlentyTest extends GoogleCloudBaseTest {
 
 
-    @Test()
+    @Test(groups = "googleCloudTests")
     public void checkPrisingCalculatorTest() {
-        webDriver.get("https://cloud.google.com/");
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
-        GoogleCloudPricingCalculatorPage googleCloudPricingCalculatorPage = new GoogleCloudPricingCalculatorPage(webDriver);
-        googleCloudMainPage.inputInSearchField("Google Cloud Platform Pricing Calculator")
+        getGoogleCloudSiteMainPage();
+        GoogleCloudPricingCalculatorPage googleCloudPricingCalculatorPage = googleCloudMainPage
+                .inputInSearchField("Google Cloud Platform Pricing Calculator")
                 .pricingCalculatorSearch()
                 .getFrameInsideFrame()
                 .chooseOperatingSystem()

@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite verbose="1" name="Demo suite" parallel="methods" thread-count="5">
+    <test name="Calculator test">
+        <groups>
+            <run>
+                <include name="googleCloudTests"/>
+                <include name="pastBinTests"/>
+
+            </run>
+        </groups>
+        <classes>
+            <class name="autoTests.googleCloudTests.CertificationTest"/>
+            <class name="autoTests.googleCloudTests.ChatBotTest"/>
+            <class name="autoTests.googleCloudTests.HardcoreTest"/>
+            <class name="autoTests.googleCloudTests.HurtMePlentyTest"/>
+            <class name="autoTests.googleCloudTests.RequiredFieldsTest"/>
+        </classes>
+
+    </test>
+
+</suite>

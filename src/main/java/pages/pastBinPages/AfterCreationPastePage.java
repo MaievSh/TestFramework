@@ -3,12 +3,7 @@ package pages.pastBinPages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.BasePage;
-
-import java.time.Duration;
 
 public class AfterCreationPastePage extends BasePage {
 
@@ -27,22 +22,22 @@ public class AfterCreationPastePage extends BasePage {
 
 
     public WebElement getAfterPostingPaste() {
-        waiter(afterPostingPaste);
+        waitElement(afterPostingPaste);
         return afterPostingPaste;
     }
 
     public WebElement checkPasteTitle() {
-        waiter(pagePasteTitle);
+        waitElement(pagePasteTitle);
         return pagePasteTitle;
     }
 
     public WebElement syntaxBashCheck() {
-        waiter(syntaxBash);
+        waitElement(syntaxBash);
         return syntaxBash;
     }
 
     public WebElement createdPasteCheck() {
-        waiter(createdPaste);
+        waitElement(createdPaste);
         return createdPaste;
     }
 }

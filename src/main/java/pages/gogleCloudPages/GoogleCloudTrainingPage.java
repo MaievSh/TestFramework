@@ -7,14 +7,14 @@ import pages.BasePage;
 
 public class GoogleCloudTrainingPage extends BasePage {
 
-    public GoogleCloudTrainingPage(WebDriver driver) {
-        super(driver);
-    }
-
     @FindBy(xpath = "//a[starts-with(@class,'cloud-button')][contains(text(),'See learning paths')]")
     private WebElement learningPathBtn;
     @FindBy(xpath = "//a[starts-with(@href,'/training/app')]")
     private WebElement applicationDevelopment;
+
+    public GoogleCloudTrainingPage(WebDriver driver) {
+        super(driver);
+    }
 
     public GoogleCloudTrainingPage learningPathBtnClick() {
         learningPathBtn.click();

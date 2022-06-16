@@ -8,11 +8,6 @@ import pages.BasePage;
 
 public class GoogleCloudMainPage extends BasePage {
 
-    public GoogleCloudMainPage(WebDriver driver) {
-        super(driver);
-    }
-
-
     @FindBy(xpath = "//input[@aria-label='Search']")
     private WebElement searchBtn;
     @FindBy(xpath = "//a[@track-name='solutions'][contains(text(),'Solutions')]")
@@ -30,6 +25,13 @@ public class GoogleCloudMainPage extends BasePage {
     @FindBy(xpath = "//div[starts-with(@class,'devsite-nav-item-title')][contains(text(),'Training')]")
     private WebElement trainingBtn;
 
+    public GoogleCloudMainPage(WebDriver driver) {
+        super(driver);
+    }
+
+    protected GoogleCloudMainPage getGoogleCloudMainPage() {
+        return new GoogleCloudMainPage(this.webDriver);
+    }
 
     public SearchResultGoogleCloudPage inputInSearchField(String txt) {
         searchBtn.click();
@@ -54,7 +56,7 @@ public class GoogleCloudMainPage extends BasePage {
     }
 
     public GoogleCloudContactPage talkToUsBtnClick() {
-        scrollBy(checkScroll);
+        scrollTO(checkScroll);
         talkToUsBtn.click();
         return new GoogleCloudContactPage(webDriver);
     }
@@ -64,9 +66,10 @@ public class GoogleCloudMainPage extends BasePage {
         return new GoogleCloudMainPage(webDriver);
     }
 
-    public GoogleCloudTrainingPage chooseTraining(){
+    public GoogleCloudTrainingPage chooseTraining() {
+        waitElement(trainingBtn);
         trainingBtn.click();
-        return  new GoogleCloudTrainingPage(webDriver);
+        return new GoogleCloudTrainingPage(webDriver);
     }
 
 }

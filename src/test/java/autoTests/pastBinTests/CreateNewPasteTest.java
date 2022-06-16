@@ -1,18 +1,16 @@
 package autoTests.pastBinTests;
 
-import autoTests.BaseTest;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.pastBinPages.AfterCreationPastePage;
 import pages.pastBinPages.CreationNewPastePage;
 
-public class CreateNewPasteTest extends BaseTest {
+public class CreateNewPasteTest extends PastBinBaseTest {
 
-    @Test()
+    @Test(groups = "pastBinTests")
     public void creationNewPasteWithParamTest() {
-        webDriver.get("https://pastebin.com/");
         CreationNewPastePage creationNewPastePage = new CreationNewPastePage(webDriver);
+        getPasteBinSiteMainPage();
         AfterCreationPastePage afterCreationPastePage = new AfterCreationPastePage(webDriver);
         creationNewPastePage.writeTextOfNewPaste("Hello from WebDriver");
         creationNewPastePage.choosePasteExpiration();
@@ -21,11 +19,11 @@ public class CreateNewPasteTest extends BaseTest {
         Assert.assertTrue(afterCreationPastePage.getAfterPostingPaste().isDisplayed());
     }
 
-    @Test()
+    @Test(groups = "pastBinTests")
     public void creationNewPasteWithBashSyntaxTest() {
         CreationNewPastePage creationNewPastePage = new CreationNewPastePage(webDriver);
+        getPasteBinSiteMainPage();
         AfterCreationPastePage afterCreationPastePage = new AfterCreationPastePage(webDriver);
-        webDriver.get("https://pastebin.com/");
         creationNewPastePage.writeTextOfNewPaste("git config --global user.name" + " " + "'New Sheriff in Town'" + "\n" +
                 "git reset $(git commit-tree HEAD^{tree} -m 'Legacy code')" + "\n" +
                 "git push origin master --force");

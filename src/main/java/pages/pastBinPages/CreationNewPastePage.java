@@ -38,7 +38,7 @@ public class CreationNewPastePage extends BasePage {
     }
 
     public void choosePasteExpiration() {
-        scrollBy(checkScroll);
+        scrollTO(checkScroll);
         pasteExpirationDropDownMenu.click();
         timeOfExpiration.click();
     }
@@ -49,7 +49,7 @@ public class CreationNewPastePage extends BasePage {
     }
 
     public AfterCreationPastePage createNewPaste() {
-        scrollBy(checkScroll);
+        scrollTO(checkScroll);
         newPasteButton.click();
         return new AfterCreationPastePage(webDriver);
     }

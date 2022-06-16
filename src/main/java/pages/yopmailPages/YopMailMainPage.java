@@ -20,7 +20,7 @@ public class YopMailMainPage extends BasePage {
     private WebElement checkEmailBtn;
 
     public YopMailMainPage chooseEmailGenerator() {
-        waiter(emailGenerator);
+        waitElement(emailGenerator);
         emailGenerator.click();
         return new YopMailMainPage(webDriver);
     }

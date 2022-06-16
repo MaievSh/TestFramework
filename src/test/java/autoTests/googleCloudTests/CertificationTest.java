@@ -6,14 +6,13 @@ import org.testng.annotations.Test;
 import pages.gogleCloudPages.GoogleCloudMainPage;
 import pages.gogleCloudPages.GoogleCloudWebassessorPage;
 
-public class CertificationTest extends BaseTest {
+public class CertificationTest extends GoogleCloudBaseTest {
 
-    @Test()
+    @Test(groups = "googleCloudTests")
     public void checkingAbilityToRegistrOnCertificationTest() {
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
-        GoogleCloudWebassessorPage googleCloudWebassessorPageg = new GoogleCloudWebassessorPage(webDriver);
-        webDriver.get("https://cloud.google.com/");
-        googleCloudMainPage.gettingStartTabClick()
+        getGoogleCloudSiteMainPage();
+        GoogleCloudWebassessorPage googleCloudWebassessorPageg =  googleCloudMainPage.gettingStartTabClick()
                 .chooseTraining()
                 .learningPathBtnClick()
                 .appDevChoose()

@@ -7,15 +7,15 @@ import pages.BasePage;
 
 public class GoogleCloudWebassessorPage extends BasePage {
 
+    @FindBy(xpath = "//span[contains(text(),'Ready to start?')]")
+    private WebElement readyToStartTitle;
+
     public GoogleCloudWebassessorPage(WebDriver driver) {
         super(driver);
     }
 
-    @FindBy(xpath = "//span[contains(text(),'Ready to start?')]")
-    private WebElement readyToStartTitle;
-
     public WebElement logInContainerIsShowUp() {
-        waiter(readyToStartTitle);
+        waitElement(readyToStartTitle);
         return readyToStartTitle;
     }
 }

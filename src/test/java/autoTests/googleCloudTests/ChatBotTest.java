@@ -6,15 +6,13 @@ import org.testng.annotations.Test;
 import pages.gogleCloudPages.GoogleCloudContactPage;
 import pages.gogleCloudPages.GoogleCloudMainPage;
 
-public class ChatBotTest extends BaseTest {
+public class ChatBotTest extends GoogleCloudBaseTest {
 
-
-    @Test()
-    public void checkAppearingChatBot(){
+    @Test(groups = "googleCloudTests")
+    public void checkAppearingChatBot() {
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
-        GoogleCloudContactPage googleCloudContactPage = new GoogleCloudContactPage(webDriver);
-        webDriver.get("https://cloud.google.com/");
-        googleCloudMainPage
+        getGoogleCloudSiteMainPage();
+        GoogleCloudContactPage googleCloudContactPage = googleCloudMainPage
                 .talkToUsBtnClick()
                 .chooseChatWitsUsBtn();
         Assert.assertTrue(googleCloudContactPage.chatBotIsOpen().isDisplayed(),"ChetBot is not displayed! ");

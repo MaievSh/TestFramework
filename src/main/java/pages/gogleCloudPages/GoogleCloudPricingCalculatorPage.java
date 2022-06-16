@@ -1,17 +1,15 @@
 package pages.gogleCloudPages;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
 import pages.yopmailPages.YopMailMainPage;
 
 
 public class GoogleCloudPricingCalculatorPage extends BasePage {
-
-    public GoogleCloudPricingCalculatorPage(WebDriver webDriver) {
-        super(webDriver);
-    }
-
 
     @FindBy(xpath = "//input[@ng-model='listingCtrl.soleTenant.nodesCount']")
     private WebElement numbOfInstancesField;
@@ -72,6 +70,9 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
     @FindBy(xpath = "//button[@aria-label='Send Email']")
     private WebElement sendEmailInWindow;
 
+    public GoogleCloudPricingCalculatorPage(WebDriver webDriver) {
+        super(webDriver);
+    }
 
     public YopMailMainPage openNewTab() {
         webDriver.switchTo().newWindow(WindowType.TAB).get("https://yopmail.com/ru/");
@@ -79,7 +80,7 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
     }
 
     public GoogleCloudPricingCalculatorPage getFrameInsideFrame() {
-        waiter(checkingFrame);
+        waitElement(checkingFrame);
         webDriver.switchTo().frame(checkingFrame);
         webDriver.switchTo().frame(insideFrameFrame);
         return new GoogleCloudPricingCalculatorPage(webDriver);
@@ -93,50 +94,50 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
 
     public GoogleCloudPricingCalculatorPage chooseOperatingSystem() {
         operatingSystemField.click();
-        waiter(chooseUbuntuPro);
+        waitElement(chooseUbuntuPro);
         chooseUbuntuPro.click();
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
     public GoogleCloudPricingCalculatorPage chooseMachineType() {
         machineTypeField.click();
-        waiter(chooseStandardMachineType);
+        waitElement(chooseStandardMachineType);
         chooseStandardMachineType.click();
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
     public GoogleCloudPricingCalculatorPage selectDownAddGpusCheckbox() {
-        waiter(addGpusCheckbox);
+        waitElement(addGpusCheckbox);
         addGpusCheckbox.click();
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
     public GoogleCloudPricingCalculatorPage chooseGpuType() {
-        scrollBy(titleSoleTenantNodes);
+        scrollTO(titleSoleTenantNodes);
         gpuTypeField.click();
-        waiter(nvidiaGpuType);
+        waitElement(nvidiaGpuType);
         nvidiaGpuType.click();
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
     public GoogleCloudPricingCalculatorPage chooseNumberOfGpu() {
-        scrollBy(titleSoleTenantNodes);
+        scrollTO(titleSoleTenantNodes);
         numberOfGpuField.click();
-        waiter(chooseNumberOfGpu);
+        waitElement(chooseNumberOfGpu);
         chooseNumberOfGpu.click();
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
     public GoogleCloudPricingCalculatorPage chooseSSD() {
         localSSDField.click();
-        waiter(chooseLocalSSD);
+        waitElement(chooseLocalSSD);
         chooseLocalSSD.click();
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
     public GoogleCloudPricingCalculatorPage chooseDataCenterLocation(String region) {
         dataCenterLocationField.click();
-        waiter(searchRegionField);
+        waitElement(searchRegionField);
         searchRegionField.click();
         searchRegionField.sendKeys(region);
         chooseFrankfurt.click();
@@ -144,21 +145,21 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
     }
 
     public GoogleCloudPricingCalculatorPage chooseCommitedUsage() {
-        waiter(dataCenterLocationField);
+        waitElement(dataCenterLocationField);
         commitedUsageField.click();
-        waiter(chooseCommitedUsage);
+        waitElement(chooseCommitedUsage);
         chooseCommitedUsage.click();
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
     public GoogleCloudPricingCalculatorPage addToEstimate() {
-        waiter(addToEstimateBtn);
+        waitElement(addToEstimateBtn);
         addToEstimateBtn.click();
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
     public GoogleCloudPricingCalculatorPage sendEstimateOnEmail() {
-        waiter(emailBtn);
+        waitElement(emailBtn);
         emailBtn.click();
         enterEmail.click();
         enterEmail.sendKeys(Keys.CONTROL, "v");

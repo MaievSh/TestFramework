@@ -7,10 +7,6 @@ import pages.BasePage;
 
 public class GoogleCLoudAppDevPage extends BasePage {
 
-    public GoogleCLoudAppDevPage(WebDriver driver) {
-        super(driver);
-    }
-
     @FindBy(xpath = "//button[starts-with(@class,'cloud-button')]")
     private WebElement pickYourPathBtn;
     @FindBy(xpath = "//a[@track-name='Cloud Developer']")
@@ -18,10 +14,14 @@ public class GoogleCLoudAppDevPage extends BasePage {
     @FindBy(xpath = "//span[starts-with(@class,'cloud-link')][contains(text(),'Learn more')][1]")
     private WebElement certificationBtn;
 
+    public GoogleCLoudAppDevPage(WebDriver driver) {
+        super(driver);
+    }
+
     public GoogleCLoudAppDevPage chooseDevPath() {
-        waiter(pickYourPathBtn);
+        waitElement(pickYourPathBtn);
         pickYourPathBtn.click();
-        waiter(dropDownMenuCloudDevs);
+        waitElement(dropDownMenuCloudDevs);
         dropDownMenuCloudDevs.click();
         return new GoogleCLoudAppDevPage(webDriver);
     }

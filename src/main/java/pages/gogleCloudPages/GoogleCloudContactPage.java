@@ -5,25 +5,30 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
 
+import java.time.Duration;
+
 public class GoogleCloudContactPage extends BasePage {
+
+    @FindBy(xpath = "//a[@track-name='Chat online with us']")
+    private WebElement chatWithUsBtn;
+    @FindBy(xpath = "//div[@id='cloud-chatbot-header']")
+    private WebElement chatBot;
 
     public GoogleCloudContactPage(WebDriver driver) {
         super(driver);
     }
 
-    @FindBy(xpath = "//a[@track-name='Chat online with us']")
-    private WebElement chatWithUsBtn;
-    @FindBy(xpath = "//div[@class='message-list']")
-    private WebElement chatBot;
-
     public GoogleCloudContactPage chooseChatWitsUsBtn() {
-        waiter(chatWithUsBtn);
-        chatWithUsBtn.click();
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        waitElement(chatWithUsBtn);
+        highlightElement(chatWithUsBtn);
+        doubleClick(chatWithUsBtn);
         return new GoogleCloudContactPage(webDriver);
     }
 
     public WebElement chatBotIsOpen() {
-        waiter(chatBot);
+        waitElement(chatBot);
+        highlightElement(chatBot);
         return chatBot;
     }
 }

@@ -1,24 +1,20 @@
 package autoTests.googleCloudTests;
 
 import autoTests.BaseTest;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import pages.gogleCloudPages.GoogleCloudMainPage;
 import pages.gogleCloudPages.GoogleCloudPricingCalculatorPage;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 import pages.yopmailPages.EmailCheckPage;
 
-public class HardcoreTest extends BaseTest {
+public class HardcoreTest extends GoogleCloudBaseTest{
 
-    @Test()
+    @Test(groups = "googleCloudTests")
     public void checkPrisingCalculatorTest() {
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
+        getGoogleCloudSiteMainPage();
         GoogleCloudPricingCalculatorPage googleCloudPricingCalculatorPage = new GoogleCloudPricingCalculatorPage(webDriver);
         EmailCheckPage emailCheckPage = new EmailCheckPage(webDriver);
-        webDriver.get("https://cloud.google.com/");
         googleCloudMainPage.inputInSearchField("Google Cloud Platform Pricing Calculator")
                 .pricingCalculatorSearch()
                 .getFrameInsideFrame()

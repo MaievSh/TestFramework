@@ -17,7 +17,7 @@ public class EmailCheckPage extends BasePage {
 
 
     public WebElement checkBill() {
-        waiter(check);
+        waitElement(check);
         return check;
     }
 }

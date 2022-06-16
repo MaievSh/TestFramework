@@ -8,16 +8,16 @@ import pages.BasePage;
 public class SearchResultGoogleCloudPage extends BasePage {
 
 
+    @FindBy(xpath = "//div[@class='gsc-thumbnail-inside']//a/child::b[text()='Google Cloud Pricing Calculator']")
+    private WebElement foundedResultBtn;
+
+
     public SearchResultGoogleCloudPage(WebDriver driver) {
         super(driver);
     }
 
-
-    @FindBy(xpath = "//div[@class='gsc-thumbnail-inside']//a/child::b[text()='Google Cloud Pricing Calculator']")
-    private WebElement foundedResultBtn;
-
     public GoogleCloudPricingCalculatorPage pricingCalculatorSearch() {
-        waiter(foundedResultBtn);
+        waitElement(foundedResultBtn);
         foundedResultBtn.click();
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }

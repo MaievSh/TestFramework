@@ -7,15 +7,15 @@ import pages.BasePage;
 
 public class GoogleCloudAppDevCertifPage extends BasePage {
 
+    @FindBy(xpath = "//a[starts-with(@class,' cws-button')][contains(text(),'Register')]")
+    private WebElement registerCertification;
+
     public GoogleCloudAppDevCertifPage(WebDriver driver) {
         super(driver);
     }
 
-    @FindBy(xpath = "//a[starts-with(@class,' cws-button')][contains(text(),'Register')]")
-    private WebElement registerCertification;
-
     public GoogleCloudAppDevCertifPage clickRegisterCertification() {
-        waiter(registerCertification);
+        waitElement(registerCertification);
         registerCertification.click();
         return new GoogleCloudAppDevCertifPage(webDriver);
     }

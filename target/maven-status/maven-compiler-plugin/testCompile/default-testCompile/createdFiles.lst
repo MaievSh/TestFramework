@@ -1,0 +1,9 @@
+autoTests\googleCloudTests\HurtMePlentyTest.class
+autoTests\googleCloudTests\RequiredFieldsTest.class
+autoTests\BaseTest.class
+autoTests\googleCloudTests\CertificationTest.class
+autoTests\googleCloudTests\ChatBotTest.class
+autoTests\googleCloudTests\HardcoreTest.class
+autoTests\googleCloudTests\GoogleCloudBaseTest.class
+autoTests\pastBinTests\CreateNewPasteTest.class
+autoTests\pastBinTests\PastBinBaseTest.class

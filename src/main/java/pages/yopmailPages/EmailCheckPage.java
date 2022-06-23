@@ -18,6 +18,7 @@ public class EmailCheckPage extends BasePage {
 
     public WebElement checkBill() {
         waitElement(check);
+        logger.info("Bill in email is not equals bill in calculator");
         return check;
     }
 }

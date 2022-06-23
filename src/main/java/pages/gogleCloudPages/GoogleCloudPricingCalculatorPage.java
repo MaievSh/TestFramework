@@ -76,6 +76,7 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
 
     public YopMailMainPage openNewTab() {
         webDriver.switchTo().newWindow(WindowType.TAB).get("https://yopmail.com/ru/");
+        logger.info("New tab Yopmail.com is opened");
         return new YopMailMainPage(webDriver);
     }
 
@@ -89,6 +90,7 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
     public GoogleCloudPricingCalculatorPage enterInfoInNumberOfInstField(String number) {
         numbOfInstancesField.click();
         numbOfInstancesField.sendKeys(number);
+        logger.info("Number of instances field is filled! ");
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
@@ -96,6 +98,7 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         operatingSystemField.click();
         waitElement(chooseUbuntuPro);
         chooseUbuntuPro.click();
+        logger.info("Operation system field is filled! ");
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
@@ -103,28 +106,34 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         machineTypeField.click();
         waitElement(chooseStandardMachineType);
         chooseStandardMachineType.click();
+        logger.info("Machine type field is filled! ");
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
     public GoogleCloudPricingCalculatorPage selectDownAddGpusCheckbox() {
         waitElement(addGpusCheckbox);
         addGpusCheckbox.click();
+        logger.info("Add GPU checkbox is marked!");
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
     public GoogleCloudPricingCalculatorPage chooseGpuType() {
         scrollTO(titleSoleTenantNodes);
+        logger.info("Page is scroll to Sole Tenant Nodes field");
         gpuTypeField.click();
         waitElement(nvidiaGpuType);
         nvidiaGpuType.click();
+        logger.info("Gpu type field is filled!");
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
     public GoogleCloudPricingCalculatorPage chooseNumberOfGpu() {
         scrollTO(titleSoleTenantNodes);
+        logger.info("Page is scroll to Sole Tenant Nodes field");
         numberOfGpuField.click();
         waitElement(chooseNumberOfGpu);
         chooseNumberOfGpu.click();
+        logger.info("Number of GPU field is filled!");
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
@@ -132,6 +141,7 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         localSSDField.click();
         waitElement(chooseLocalSSD);
         chooseLocalSSD.click();
+        logger.info("Local SSD field is filled!");
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
@@ -141,6 +151,7 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         searchRegionField.click();
         searchRegionField.sendKeys(region);
         chooseFrankfurt.click();
+        logger.info("Region field is filled!");
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
@@ -149,12 +160,14 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         commitedUsageField.click();
         waitElement(chooseCommitedUsage);
         chooseCommitedUsage.click();
+        logger.info("Commited usage field is filled!");
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
     public GoogleCloudPricingCalculatorPage addToEstimate() {
         waitElement(addToEstimateBtn);
         addToEstimateBtn.click();
+        logger.info("Add estimate button is clicked");
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
@@ -162,8 +175,11 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         waitElement(emailBtn);
         emailBtn.click();
         enterEmail.click();
+        logger.info("Email button is clicked and email field is trigger");
         enterEmail.sendKeys(Keys.CONTROL, "v");
+        logger.info("Email is paste in email field");
         sendEmailInWindow.click();
+        logger.info("Bill is sending on email");
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
@@ -172,6 +188,7 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
             webDriver.switchTo().window(winHandle);
             break;
         }
+        logger.info("Yopmail window is switched back to pricing calculator page");
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }
 
@@ -180,6 +197,7 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         for (String winHandle : webDriver.getWindowHandles()) {
             webDriver.switchTo().window(winHandle);
         }
+        logger.info("Window is switched on Yopmail page again");
         return new YopMailMainPage(webDriver);
     }
 

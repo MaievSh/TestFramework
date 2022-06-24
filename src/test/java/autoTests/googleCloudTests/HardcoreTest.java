@@ -9,7 +9,7 @@ import pages.yopmailPages.EmailCheckPage;
 
 public class HardcoreTest extends GoogleCloudBaseTest{
 
-    @Test(groups = "googleCloudTests")
+    @Test(groups = "Smoke")
     public void checkPrisingCalculatorTest() {
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
         getGoogleCloudSiteMainPage();

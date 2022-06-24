@@ -61,7 +61,7 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
     private WebElement estimateListLocalSSDField;
     @FindBy(xpath = "//md-list-item[@role='listitem']/child::div[@class='md-list-item-text ng-binding'][contains(text(),'Commitment term: 1 Year')]")
     private WebElement estimateListCommitedTermField;
-    @FindBy(xpath = "//h2[@class='md-title']/b[@class='ng-binding'][contains(text(),'USD 21,894.89')]")
+    @FindBy(xpath = "//h2[@class='md-title']/b[@class='ng-binding'][contains(text(),'USD 22,535.76')]")
     private WebElement totalCostManualTest;
     @FindBy(xpath = "//*[@id='email_quote']")
     private WebElement emailBtn;

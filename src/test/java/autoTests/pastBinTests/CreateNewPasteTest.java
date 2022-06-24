@@ -7,7 +7,7 @@ import pages.pastBinPages.CreationNewPastePage;
 
 public class CreateNewPasteTest extends PastBinBaseTest {
 
-    @Test(groups = "pastBinTests")
+    @Test(groups = "Regression")
     public void creationNewPasteWithParamTest() {
         CreationNewPastePage creationNewPastePage = new CreationNewPastePage(webDriver);
         getPasteBinSiteMainPage();
@@ -19,7 +19,7 @@ public class CreateNewPasteTest extends PastBinBaseTest {
         Assert.assertTrue(afterCreationPastePage.getAfterPostingPaste().isDisplayed());
     }
 
-    @Test(groups = "pastBinTests")
+    @Test(groups = "Regression")
     public void creationNewPasteWithBashSyntaxTest() {
         CreationNewPastePage creationNewPastePage = new CreationNewPastePage(webDriver);
         getPasteBinSiteMainPage();

@@ -1,6 +1,6 @@
-utils\TestListener.class
 pages\BasePage.class
 pages\gogleCloudPages\SearchResultGoogleCloudPage.class
+utils\ScreenOnTestFailure.class
 pages\gogleCloudPages\GoogleCloudWebassessorPage.class
 pages\gogleCloudPages\GoogleCloudContactPage.class
 pages\yopmailPages\EmailCheckPage.class

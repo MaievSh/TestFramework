@@ -15,7 +15,7 @@ import java.net.MalformedURLException;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class TestListener implements ITestListener {
+public class ScreenOnTestFailure implements ITestListener {
 
     private final Logger log = LogManager.getRootLogger();
 

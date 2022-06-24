@@ -8,7 +8,7 @@ import pages.gogleCloudPages.GoogleCloudMainPage;
 
 public class RequiredFieldsTest extends GoogleCloudBaseTest {
 
-    @Test(groups = "googleCloudTests")
+    @Test(groups = "Regression")
     public void checkHighlightedRequiredFieldsTest() {
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
         getGoogleCloudSiteMainPage();

@@ -9,7 +9,7 @@ import pages.gogleCloudPages.GoogleCloudPricingCalculatorPage;
 public class HurtMePlentyTest extends GoogleCloudBaseTest {
 
 
-    @Test(groups = "googleCloudTests")
+    @Test(groups = "Smoke")
     public void checkPrisingCalculatorTest() {
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
         getGoogleCloudSiteMainPage();

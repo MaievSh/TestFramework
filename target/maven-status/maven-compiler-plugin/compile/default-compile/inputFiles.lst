@@ -6,7 +6,6 @@ C:\Users\Aliaksandra_Antsyfer\IdeaProjects\helloWebdriver\src\main\java\pages\go
 C:\Users\Aliaksandra_Antsyfer\IdeaProjects\helloWebdriver\src\main\java\pages\gogleCloudPages\GoogleCloudContactPage.java
 C:\Users\Aliaksandra_Antsyfer\IdeaProjects\helloWebdriver\src\main\java\pages\yopmailPages\EmailCheckPage.java
 C:\Users\Aliaksandra_Antsyfer\IdeaProjects\helloWebdriver\src\main\java\pages\gogleCloudPages\GoogleCLoudAppDevPage.java
-C:\Users\Aliaksandra_Antsyfer\IdeaProjects\helloWebdriver\src\main\java\utils\TestListener.java
 C:\Users\Aliaksandra_Antsyfer\IdeaProjects\helloWebdriver\src\main\java\pages\gogleCloudPages\SearchResultGoogleCloudPage.java
 C:\Users\Aliaksandra_Antsyfer\IdeaProjects\helloWebdriver\src\main\java\pages\yopmailPages\YopMailMainPage.java
 C:\Users\Aliaksandra_Antsyfer\IdeaProjects\helloWebdriver\src\main\java\pages\gogleCloudPages\GoogleCloudWebassessorPage.java
@@ -15,4 +14,5 @@ C:\Users\Aliaksandra_Antsyfer\IdeaProjects\helloWebdriver\src\main\java\pages\pa
 C:\Users\Aliaksandra_Antsyfer\IdeaProjects\helloWebdriver\src\main\java\pages\BasePage.java
 C:\Users\Aliaksandra_Antsyfer\IdeaProjects\helloWebdriver\src\main\java\driver\DriverSingleton.java
 C:\Users\Aliaksandra_Antsyfer\IdeaProjects\helloWebdriver\src\main\java\pages\gogleCloudPages\GoogleCloudTrainingPage.java
+C:\Users\Aliaksandra_Antsyfer\IdeaProjects\helloWebdriver\src\main\java\utils\ScreenOnTestFailure.java
 C:\Users\Aliaksandra_Antsyfer\IdeaProjects\helloWebdriver\src\main\java\pages\gogleCloudPages\GoogleCloudPricingCalculatorPage.java

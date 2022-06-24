@@ -3,13 +3,11 @@
     <test name="Regression">
         <groups>
             <run>
-                <include name="pastBinTests"/>
+                <include name="Regression"/>
             </run>
         </groups>
         <classes>
             <class name="autoTests.pastBinTests.CreateNewPasteTest"/>
         </classes>
-
     </test>
-
 </suite>

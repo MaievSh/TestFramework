@@ -39,6 +39,13 @@
           <include name="browserSetUp"/>
         </methods>
       </class> <!-- autoTests.pastBinTests.CreateNewPasteTest -->
+      <class name="autoTests.googleCloudTests.CertificationTest">
+        <methods>
+          <include name="browserQuite"/>
+          <include name="checkingAbilityToRegistrOnCertificationTest"/>
+          <include name="browserSetUp"/>
+        </methods>
+      </class> <!-- autoTests.googleCloudTests.CertificationTest -->
     </classes>
   </test> <!-- Command line test(failed) -->
 </suite> <!-- Failed suite [Command line suite] -->

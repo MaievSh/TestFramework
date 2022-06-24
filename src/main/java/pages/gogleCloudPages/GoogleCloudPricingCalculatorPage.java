@@ -221,5 +221,4 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
         return totalCostManualTest;
     }
 
-
 }

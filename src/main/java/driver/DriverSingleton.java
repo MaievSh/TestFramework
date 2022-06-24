@@ -20,7 +20,7 @@ public class DriverSingleton {
     }
 
     public static WebDriver getDriver() throws MalformedURLException {
-        if (null == webDriver) {
+        if (webDriver == null) {
             if ("edge".equals(System.getProperty("browser"))) {
                 WebDriverManager.edgedriver().setup();
                 webDriver = new EdgeDriver();

@@ -1,9 +1,9 @@
 package autoTests;
 
+import driver.DriverSingleton;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import driver.DriverSingleton;
 import org.testng.annotations.Listeners;
 import utils.TestListener;
 
@@ -16,12 +16,11 @@ public abstract class BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public void browserSetUp() throws MalformedURLException {
-       webDriver = DriverSingleton.getDriver();
+        webDriver = DriverSingleton.getDriver();
     }
 
     @AfterMethod(alwaysRun = true)
     public void browserQuite() {
         DriverSingleton.closeDriver();
     }
-
 }

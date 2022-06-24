@@ -25,5 +25,4 @@ public class GoogleCloudContactSalesPage extends BasePage {
         return errorText;
     }
 
-
 }

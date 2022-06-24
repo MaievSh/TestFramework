@@ -16,7 +16,7 @@ public class GoogleCloudMainPage extends BasePage {
     private WebElement dropDownMenuIndustrySolutionsTab;
     @FindBy(xpath = "//div[@class='devsite-nav-item-title'][contains(text(),'Gaming')]")
     private WebElement gamingBtn;
-    @FindBy(xpath = "//a[@track-name='talk to us']")
+    @FindBy(xpath = "//tab[@class='left-overflow cta']/a[@track-name='sales']")
     private WebElement talkToUsBtn;
     @FindBy(xpath = "//div[@class='t-cloud-inner']")
     private WebElement checkScroll;
@@ -51,23 +51,23 @@ public class GoogleCloudMainPage extends BasePage {
     }
 
     public GoogleCloudGamingPage gamingBtnClick() {
-        gamingBtn.click();
+        click(gamingBtn);
         return new GoogleCloudGamingPage(webDriver);
     }
 
     public GoogleCloudContactPage talkToUsBtnClick() {
-        scrollTO(checkScroll);
         talkToUsBtn.click();
         return new GoogleCloudContactPage(webDriver);
     }
 
-    public GoogleCloudMainPage gettingStartTabClick() {
+    public GoogleCloudMainPage gettingStartTabClick() throws InterruptedException {
+        waitElement(gettingStartTab);
         gettingStartTab.click();
         return new GoogleCloudMainPage(webDriver);
     }
 
-    public GoogleCloudTrainingPage chooseTraining() {
-        waitElement(trainingBtn);
+    public GoogleCloudTrainingPage chooseTraining() throws InterruptedException {
+        Thread.sleep(2000);
         trainingBtn.click();
         return new GoogleCloudTrainingPage(webDriver);
     }

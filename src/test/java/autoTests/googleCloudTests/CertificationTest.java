@@ -9,7 +9,7 @@ import pages.gogleCloudPages.GoogleCloudWebassessorPage;
 public class CertificationTest extends GoogleCloudBaseTest {
 
     @Test(groups = "googleCloudTests")
-    public void checkingAbilityToRegistrOnCertificationTest() {
+    public void checkingAbilityToRegistrOnCertificationTest() throws InterruptedException {
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
         getGoogleCloudSiteMainPage();
         GoogleCloudWebassessorPage googleCloudWebassessorPageg =  googleCloudMainPage.gettingStartTabClick()

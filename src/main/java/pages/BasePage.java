@@ -59,4 +59,9 @@ public abstract class BasePage {
         action.moveToElement(element).pause(java.time.Duration.ofSeconds(10)).build().perform();
     }
 
+    public void click(WebElement element) {
+        js = (JavascriptExecutor) webDriver;
+        js.executeScript("arguments[0].click();", element);
+    }
+
 }

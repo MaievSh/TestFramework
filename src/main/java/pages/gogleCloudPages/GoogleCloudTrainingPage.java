@@ -16,7 +16,8 @@ public class GoogleCloudTrainingPage extends BasePage {
         super(driver);
     }
 
-    public GoogleCloudTrainingPage learningPathBtnClick() {
+    public GoogleCloudTrainingPage learningPathBtnClick() throws InterruptedException {
+        waitElement(learningPathBtn);
         learningPathBtn.click();
         return new GoogleCloudTrainingPage(webDriver);
     }
@@ -25,6 +26,5 @@ public class GoogleCloudTrainingPage extends BasePage {
         applicationDevelopment.click();
         return new GoogleCLoudAppDevPage(webDriver);
     }
-
 
 }

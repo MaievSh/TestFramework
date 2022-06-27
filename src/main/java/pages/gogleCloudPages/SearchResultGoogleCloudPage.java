@@ -18,7 +18,7 @@ public class SearchResultGoogleCloudPage extends BasePage {
 
     public GoogleCloudPricingCalculatorPage pricingCalculatorSearch() {
         waitElement(foundedResultBtn);
-        logger.info("Pricing calculator page open!");
+        logger.info("Pricing calculator page open!    ");
         foundedResultBtn.click();
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }

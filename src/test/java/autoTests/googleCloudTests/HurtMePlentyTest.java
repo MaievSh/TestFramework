@@ -1,6 +1,8 @@
 package autoTests.googleCloudTests;
 
 import autoTests.BaseTest;
+import driver.EdgeDriverCreator;
+import driver.WebDriverCreator;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.gogleCloudPages.GoogleCloudMainPage;
@@ -9,7 +11,7 @@ import pages.gogleCloudPages.GoogleCloudPricingCalculatorPage;
 public class HurtMePlentyTest extends GoogleCloudBaseTest {
 
 
-    @Test(groups = "Smoke")
+    @Test(groups = "Smoke", enabled = false)
     public void checkPrisingCalculatorTest() {
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
         getGoogleCloudSiteMainPage();

@@ -14,13 +14,12 @@ import java.time.Duration;
 
 public abstract class BasePage {
 
-    public Logger logger = LogManager.getRootLogger();
+    protected Logger logger = LogManager.getRootLogger();
 
-    protected final WebDriver webDriver;
+    protected WebDriver webDriver;
 
     protected String switchToNewTab;
     protected JavascriptExecutor js;
-
 
     public BasePage(WebDriver driver) {
         this.webDriver = driver;

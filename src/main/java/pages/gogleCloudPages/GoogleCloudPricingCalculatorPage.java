@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
+import pages.CustomActionDriver;
 import pages.yopmailPages.YopMailMainPage;
 
 
@@ -82,6 +83,7 @@ public class GoogleCloudPricingCalculatorPage extends BasePage {
 
     public GoogleCloudPricingCalculatorPage getFrameInsideFrame() {
         waitElement(checkingFrame);
+        webDriver = new CustomActionDriver(webDriver);
         webDriver.switchTo().frame(checkingFrame);
         webDriver.switchTo().frame(insideFrameFrame);
         return new GoogleCloudPricingCalculatorPage(webDriver);

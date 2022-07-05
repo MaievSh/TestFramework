@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
 
+
 public class GoogleCloudGamingPage extends BasePage {
 
     @FindBy(xpath = "//div[starts-with(@class,'cloud-body-text__small') and text()='Take the next step']")

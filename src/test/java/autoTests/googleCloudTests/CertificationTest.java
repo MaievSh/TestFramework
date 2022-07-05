@@ -8,7 +8,7 @@ import pages.gogleCloudPages.GoogleCloudWebassessorPage;
 
 public class CertificationTest extends GoogleCloudBaseTest {
 
-    @Test(groups = "Smoke")
+    @Test(groups = "Smoke", enabled = false)
     public void checkingAbilityToRegistrOnCertificationTest() throws InterruptedException {
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
         getGoogleCloudSiteMainPage();

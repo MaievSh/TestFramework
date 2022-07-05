@@ -1,15 +1,14 @@
 package pages.yopmailPages;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import pages.BasePage;
-import pages.gogleCloudPages.GoogleCloudPricingCalculatorPage;
 
 import java.time.Duration;
 
 public class YopMailMainPage extends BasePage {
+
     public YopMailMainPage(WebDriver driver) {
         super(driver);
     }

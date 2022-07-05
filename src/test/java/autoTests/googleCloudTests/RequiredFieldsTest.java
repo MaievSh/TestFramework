@@ -1,6 +1,7 @@
 package autoTests.googleCloudTests;
 
-import autoTests.BaseTest;
+import driver.EdgeDriverCreator;
+import driver.WebDriverCreator;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.gogleCloudPages.GoogleCloudContactSalesPage;
@@ -10,15 +11,17 @@ public class RequiredFieldsTest extends GoogleCloudBaseTest {
 
     @Test(groups = "Regression")
     public void checkHighlightedRequiredFieldsTest() {
+        WebDriverCreator creator = new EdgeDriverCreator(); // can be chrome
+        webDriver = creator.createWebDriver();
+        webDriver.get("https://cloud.google.com/");
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
-        getGoogleCloudSiteMainPage();
         GoogleCloudContactSalesPage googleCloudContactSalesPage =
-        googleCloudMainPage.solutionsBtnClick()
-                .industrySolutionsChoose()
-                .gamingBtnClick()
-                .clickTakeNextStepTab()
-                .clickContactSalesBtn()
-                .clickSubmitButton();
-        Assert.assertTrue(googleCloudContactSalesPage.errorTextAppears().isDisplayed(),"Errors in fields is not displayed!");
+                googleCloudMainPage.solutionsBtnClick()
+                        .industrySolutionsChoose()
+                        .gamingBtnClick()
+                        .clickTakeNextStepTab()
+                        .clickContactSalesBtn()
+                        .clickSubmitButton();
+        Assert.assertTrue(googleCloudContactSalesPage.errorTextAppears().isDisplayed(), "Errors in fields is not displayed!");
     }
 }

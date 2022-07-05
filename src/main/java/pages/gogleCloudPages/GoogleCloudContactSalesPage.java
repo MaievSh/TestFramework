@@ -11,6 +11,7 @@ public class GoogleCloudContactSalesPage extends BasePage {
     private WebElement submitBtn;
     @FindBy(xpath = "//span[@slot='error-text-required']")
     private WebElement errorText;
+
     public GoogleCloudContactSalesPage(WebDriver driver) {
         super(driver);
     }

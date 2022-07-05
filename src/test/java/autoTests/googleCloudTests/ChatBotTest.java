@@ -8,7 +8,7 @@ import pages.gogleCloudPages.GoogleCloudMainPage;
 
 public class ChatBotTest extends GoogleCloudBaseTest {
 
-    @Test(groups = "Regression")
+    @Test(groups = "Regression", enabled = false)
     public void checkAppearingChatBot() {
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
         getGoogleCloudSiteMainPage();

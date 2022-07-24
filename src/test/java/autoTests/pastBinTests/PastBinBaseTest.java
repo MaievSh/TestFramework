@@ -1,10 +1,15 @@
 package autoTests.pastBinTests;
 
 import autoTests.BaseTest;
+import pages.CustomActionDriver;
+import pages.pastBinPages.AfterCreationPastePage;
+import pages.pastBinPages.CreationNewPastePage;
+
+import static driver.DriverSingleton.webDriver;
 
 public abstract class PastBinBaseTest extends BaseTest {
-
     public void getPasteBinSiteMainPage() {
-        this.webDriver.get("https://pastebin.com/");
+        webDriver = new CustomActionDriver(webDriver);
+        webDriver.get("https://pastebin.com/");
     }
 }

@@ -23,16 +23,13 @@ public class DriverSingleton {
     public static WebDriver getDriver() throws MalformedURLException {
         if (webDriver == null) {
             if ("edge".equals(System.getProperty("browser"))) {
-                WebDriverManager.edgedriver().setup();
-                webDriver = new EdgeDriver();
-                //webDriver = new RemoteWebDriver(new URL("http://192.168.100.5:4455/wd/hub"), edgeOptions);
-                webDriver.manage().window().maximize();
+                EdgeDriverCreator edgeDriverCreator = new EdgeDriverCreator();
+                edgeDriverCreator.createWebDriver();
             } else {
-                if ("chrome".equals(System.getProperty("browser")))
-                    WebDriverManager.chromedriver().setup();
-                webDriver = new ChromeDriver();
-                //  webDriver = new RemoteWebDriver(new URL("http://192.168.100.5:4455/wd/hub"), chromeOptions);
-                webDriver.manage().window().maximize();
+                if ("chrome".equals(System.getProperty("browser"))) {
+                    ChromeDriverCreator chromeDriverCreator = new ChromeDriverCreator();
+                    chromeDriverCreator.createWebDriver();
+                }
             }
         }
         return webDriver;

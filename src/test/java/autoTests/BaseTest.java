@@ -8,11 +8,10 @@ import org.testng.annotations.Listeners;
 import utils.ScreenOnTestFailure;
 
 import java.net.MalformedURLException;
+import static driver.DriverSingleton.webDriver;
 
 @Listeners({ScreenOnTestFailure.class})
 public abstract class BaseTest {
-
-    public WebDriver webDriver;
 
     @BeforeMethod(alwaysRun = true)
     public void browserSetUp() throws MalformedURLException {

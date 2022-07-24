@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import pages.gogleCloudPages.GoogleCloudMainPage;
 import pages.gogleCloudPages.GoogleCloudPricingCalculatorPage;
 import pages.yopmailPages.EmailCheckPage;
+import static driver.DriverSingleton.webDriver;
 
 public class HardcoreTest extends GoogleCloudBaseTest{
 

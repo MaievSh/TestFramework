@@ -2,6 +2,7 @@ package pages;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,8 +10,13 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.pastBinPages.AfterCreationPastePage;
+import pages.pastBinPages.CreationNewPastePage;
 
 import java.time.Duration;
+import java.util.List;
+
+import static driver.DriverSingleton.webDriver;
 
 public abstract class BasePage {
 
@@ -20,7 +26,6 @@ public abstract class BasePage {
 
     protected String switchToNewTab;
     protected JavascriptExecutor js;
-
     public BasePage(WebDriver driver) {
         this.webDriver = driver;
         PageFactory.initElements(driver, this);
@@ -30,6 +35,14 @@ public abstract class BasePage {
         this(driver);
         this.switchToNewTab = winHandleBefore;
         winHandleBefore = webDriver.getWindowHandle();
+    }
+
+    public WebElement findElement(By by){
+        return webDriver.findElement(by);
+    }
+
+    public List<WebElement> findElements(By by){
+        return webDriver.findElements(by);
     }
 
     public void waitElement(WebElement element) {

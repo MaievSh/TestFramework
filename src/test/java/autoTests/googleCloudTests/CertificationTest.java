@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.gogleCloudPages.GoogleCloudMainPage;
 import pages.gogleCloudPages.GoogleCloudWebassessorPage;
+import static driver.DriverSingleton.webDriver;
 
 public class CertificationTest extends GoogleCloudBaseTest {
 

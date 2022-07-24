@@ -1,9 +1,12 @@
 package pages.pastBinPages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
+
+import static java.lang.String.format;
 
 public class CreationNewPastePage extends BasePage {
 
@@ -11,12 +14,14 @@ public class CreationNewPastePage extends BasePage {
         super(driver);
     }
 
+    private static final String PASTEBIN_URL = "https://pastebin.com/";
+
+    private static String TIME_EXPIRATION = "//li[@class='select2-results__option']";
+    private static String TEXT_EXPIRATION = "%s[text()='%s']";
     @FindBy(xpath = "//textarea[@id='postform-text']")
     private WebElement textArea;
     @FindBy(xpath = "//span[@role='textbox' and @title='Never']")
     private WebElement pasteExpirationDropDownMenu;
-    @FindBy(xpath = "//li[@class='select2-results__option' and text()='10 Minutes']")
-    private WebElement timeOfExpiration;
     @FindBy(xpath = "//input[@id='postform-name']")
     private WebElement postFormText;
     @FindBy(xpath = "//button[text()='Create New Paste']")
@@ -30,6 +35,9 @@ public class CreationNewPastePage extends BasePage {
     @FindBy(xpath = "//li[@class='select2-results__option']/descendant::li[@class='select2-results__option' and text()='Bash'][1]")
     private WebElement bashSyntax;
 
+    public void openPasteBinWebsite() {
+        webDriver.get(PASTEBIN_URL);
+    }
 
     public void writeTextOfNewPaste(String textOfPaste) {
         textArea.sendKeys(textOfPaste);
@@ -38,7 +46,9 @@ public class CreationNewPastePage extends BasePage {
     public void choosePasteExpiration() {
         scrollTO(checkScroll);
         pasteExpirationDropDownMenu.click();
-        timeOfExpiration.click();
+    }
+    public void chooseTimeOfExpiration(String linkText){
+        findElement(By.xpath(format(TIME_EXPIRATION, TEXT_EXPIRATION, linkText))).click();
     }
 
     public void writePostFormText(String postTxt) {

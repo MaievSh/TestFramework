@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.gogleCloudPages.GoogleCloudContactPage;
 import pages.gogleCloudPages.GoogleCloudMainPage;
+import static driver.DriverSingleton.webDriver;
 
 public class ChatBotTest extends GoogleCloudBaseTest {
 

@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.gogleCloudPages.GoogleCloudContactSalesPage;
 import pages.gogleCloudPages.GoogleCloudMainPage;
+import static driver.DriverSingleton.webDriver;
 
 public class RequiredFieldsTest extends GoogleCloudBaseTest {
 

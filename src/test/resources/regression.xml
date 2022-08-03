@@ -7,7 +7,7 @@
             </run>
         </groups>
         <classes>
-            <class name="autoTests.pastBinTests.CreateNewPasteTest"/>
+            <class name="autoTests.googleCloudTests.pastBinTests.CreateNewPasteTest"/>
         </classes>
     </test>
 </suite>

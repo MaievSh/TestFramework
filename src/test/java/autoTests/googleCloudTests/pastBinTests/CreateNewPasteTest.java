@@ -1,7 +1,6 @@
-package autoTests.pastBinTests;
+package autoTests.googleCloudTests.pastBinTests;
 
 import driver.ChromeDriverCreator;
-import driver.EdgeDriverCreator;
 import driver.WebDriverCreator;
 import org.testng.Assert;
 import org.testng.annotations.Test;

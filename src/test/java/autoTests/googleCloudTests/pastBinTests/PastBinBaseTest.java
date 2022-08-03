@@ -1,4 +1,4 @@
-package autoTests.pastBinTests;
+package autoTests.googleCloudTests.pastBinTests;
 
 import autoTests.BaseTest;
 import pages.CustomActionDriver;

@@ -2,14 +2,20 @@ package autoTests.googleCloudTests.pastBinTests;
 
 import driver.ChromeDriverCreator;
 import driver.WebDriverCreator;
+import io.qameta.allure.Step;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.pastBinPages.AfterCreationPastePage;
 import pages.pastBinPages.CreationNewPastePage;
+import utils.AllureListener;
+
 import static driver.DriverSingleton.webDriver;
+@Listeners({AllureListener.class})
 public class CreateNewPasteTest extends PastBinBaseTest {
 
     @Test(groups = "Regression")
+    @Step
     public void creationNewPasteWithParamTest() {
         WebDriverCreator creator = new ChromeDriverCreator();
         webDriver = creator.createWebDriver();
@@ -25,6 +31,7 @@ public class CreateNewPasteTest extends PastBinBaseTest {
     }
 
     @Test(groups = "Regression")
+    @Step
     public void creationNewPasteWithBashSyntaxTest() {
         WebDriverCreator creator = new ChromeDriverCreator();
         webDriver = creator.createWebDriver();
@@ -40,6 +47,5 @@ public class CreateNewPasteTest extends PastBinBaseTest {
         creationNewPastePage.createNewPaste();
         Assert.assertTrue(afterCreationPastePage.checkPasteTitle().isDisplayed() && afterCreationPastePage.syntaxBashCheck().isDisplayed());
     }
-
 
 }

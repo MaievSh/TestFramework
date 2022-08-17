@@ -1,11 +1,13 @@
 package utils;
 
 import driver.DriverSingleton;
+import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
@@ -14,6 +16,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+
+import static driver.DriverSingleton.webDriver;
 
 public class ScreenOnTestFailure implements ITestListener {
 

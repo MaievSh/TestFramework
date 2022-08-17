@@ -9,7 +9,7 @@ import static driver.DriverSingleton.webDriver;
 
 public class ChatBotTest extends GoogleCloudBaseTest {
 
-    @Test(groups = "Regression", enabled = false)
+    @Test(groups = "Regression")
     public void checkAppearingChatBot() {
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
         getGoogleCloudSiteMainPage();

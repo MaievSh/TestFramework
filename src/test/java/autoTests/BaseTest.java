@@ -5,12 +5,13 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
+import utils.AllureListener;
 import utils.ScreenOnTestFailure;
 
 import java.net.MalformedURLException;
 import static driver.DriverSingleton.webDriver;
 
-@Listeners({ScreenOnTestFailure.class})
+@Listeners({AllureListener.class})
 public abstract class BaseTest {
 
     @BeforeMethod(alwaysRun = true)

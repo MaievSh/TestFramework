@@ -12,7 +12,7 @@ import static driver.DriverSingleton.webDriver;
 
 public class HardcoreTest extends GoogleCloudBaseTest{
 
-    @Test(groups = "Smoke", enabled = false)
+    @Test(groups = "Smoke")
     public void checkPrisingCalculatorTest() {
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
         getGoogleCloudSiteMainPage();

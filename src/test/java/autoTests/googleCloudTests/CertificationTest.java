@@ -9,7 +9,7 @@ import static driver.DriverSingleton.webDriver;
 
 public class CertificationTest extends GoogleCloudBaseTest {
 
-    @Test(groups = "Smoke", enabled = false)
+    @Test(groups = "Smoke")
     public void checkingAbilityToRegistrOnCertificationTest() throws InterruptedException {
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
         getGoogleCloudSiteMainPage();

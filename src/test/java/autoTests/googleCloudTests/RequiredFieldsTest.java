@@ -1,8 +1,5 @@
 package autoTests.googleCloudTests;
 
-import driver.ChromeDriverCreator;
-import driver.EdgeDriverCreator;
-import driver.WebDriverCreator;
 import io.qameta.allure.Step;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
@@ -18,9 +15,7 @@ public class RequiredFieldsTest extends GoogleCloudBaseTest {
     @Test(groups = "Regression")
     @Step
     public void checkHighlightedRequiredFieldsTest() {
-        WebDriverCreator creator = new ChromeDriverCreator(); // can be chrome
-        webDriver = creator.createWebDriver();
-        webDriver.get("https://cloud.google.com/");
+        getGoogleCloudSiteMainPage();
         GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
         GoogleCloudContactSalesPage googleCloudContactSalesPage =
                 googleCloudMainPage.solutionsBtnClick()

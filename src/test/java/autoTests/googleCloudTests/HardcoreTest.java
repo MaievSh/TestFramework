@@ -1,21 +1,19 @@
 package autoTests.googleCloudTests;
 
-import autoTests.BaseTest;
-import driver.EdgeDriverCreator;
-import driver.WebDriverCreator;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.gogleCloudPages.GoogleCloudMainPage;
 import pages.gogleCloudPages.GoogleCloudPricingCalculatorPage;
 import pages.yopmailPages.EmailCheckPage;
+
 import static driver.DriverSingleton.webDriver;
 
 public class HardcoreTest extends GoogleCloudBaseTest{
 
     @Test(groups = "Smoke")
     public void checkPrisingCalculatorTest() {
-        GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
         getGoogleCloudSiteMainPage();
+        GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
         GoogleCloudPricingCalculatorPage googleCloudPricingCalculatorPage = new GoogleCloudPricingCalculatorPage(webDriver);
         EmailCheckPage emailCheckPage = new EmailCheckPage(webDriver);
         googleCloudMainPage.inputInSearchField("Google Cloud Platform Pricing Calculator")

@@ -1,7 +1,5 @@
 package autoTests.googleCloudTests.pastBinTests;
 
-import driver.ChromeDriverCreator;
-import driver.WebDriverCreator;
 import io.qameta.allure.Step;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
@@ -17,9 +15,7 @@ public class CreateNewPasteTest extends PastBinBaseTest {
     @Test(groups = "Regression")
     @Step
     public void creationNewPasteWithParamTest() {
-        WebDriverCreator creator = new ChromeDriverCreator();
-        webDriver = creator.createWebDriver();
-        webDriver.get("https://pastebin.com/");
+        getPasteBinSiteMainPage();
         CreationNewPastePage creationNewPastePage = new CreationNewPastePage(webDriver);
         AfterCreationPastePage afterCreationPastePage = new AfterCreationPastePage(webDriver);
         creationNewPastePage.writeTextOfNewPaste("Hello from WebDriver");
@@ -33,9 +29,7 @@ public class CreateNewPasteTest extends PastBinBaseTest {
     @Test(groups = "Regression")
     @Step
     public void creationNewPasteWithBashSyntaxTest() {
-        WebDriverCreator creator = new ChromeDriverCreator();
-        webDriver = creator.createWebDriver();
-        webDriver.get("https://pastebin.com/");
+        getPasteBinSiteMainPage();
         CreationNewPastePage creationNewPastePage = new CreationNewPastePage(webDriver);
         AfterCreationPastePage afterCreationPastePage = new AfterCreationPastePage(webDriver);
         creationNewPastePage.writeTextOfNewPaste("git config --global user.name" + " " + "'New Sheriff in Town'" + "\n" +

@@ -7,7 +7,7 @@ import pages.BasePage;
 
 public class GoogleCloudContactPage extends BasePage {
 
-    @FindBy(xpath = "//a[@track-name='Chat online with us']")
+    @FindBy(xpath = "//a[@track-name='chat online with us']")
     private WebElement chatWithUsBtn;
     @FindBy(xpath = "//div[@id='cloud-chatbot-header']")
     private WebElement chatBot;
@@ -24,7 +24,7 @@ public class GoogleCloudContactPage extends BasePage {
     }
 
     public WebElement chatBotIsOpen() {
-        pause(chatWithUsBtn);
+        waitElement(chatBot);
         highlightElement(chatBot);
         return chatBot;
     }

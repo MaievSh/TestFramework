@@ -11,9 +11,9 @@ Feature: User have ability to create new pasteBin paste
     And User create new paste
     Then New paste is created
     Examples:
-      | text           | title  |
-      | Test cucumber  | test   |
-      | Test cucumber2 | test 2 |
+      | text                 | title       |
+      | Test cucumber        | test        |
+      | Test cucumber second | test second |
 
 
   Scenario Outline: Create paste with bash syntax

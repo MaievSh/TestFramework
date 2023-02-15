@@ -1,13 +1,8 @@
 package driver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
-
-import java.net.MalformedURLException;
 
 
 public class DriverSingleton {
@@ -20,7 +15,7 @@ public class DriverSingleton {
     private DriverSingleton() {
     }
 
-    public static WebDriver getDriver() throws MalformedURLException {
+    public static WebDriver getDriver(){
         if (webDriver == null) {
             if ("edge".equals(System.getProperty("browser"))) {
                 EdgeDriverCreator edgeDriverCreator = new EdgeDriverCreator();
